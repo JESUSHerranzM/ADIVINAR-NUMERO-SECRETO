@@ -25,4 +25,25 @@ def adivina_el_numero():
     
     nombre = input("Introduce tu nombre: ")  # Pide el nombre del jugador
     print(f"Bienvenido {nombre} a: ¡Adivina el número!")  # Mensaje de bienvenida
-    print("Estoy pensando en un número entre 1 y 100.")  # Indicación del juego    
+    print("Estoy pensando en un número entre 1 y 100.")  # Indicación del juego
+
+    while True:
+        intento = int(input("Intenta adivinar el número: "))  # Pedimos al usuario un número
+        intentos += 1  # Aumentamos el contador de intentos
+        
+        if intento < numero_secreto:
+            print("El número es mayor SO PENCO. Inténtalo de nuevo CENUTRIO.")  # Indicamos que el número es mayor
+        elif intento > numero_secreto:
+            print("El número es menor CARA CULO. Inténtalo de nuevo INVÁLIDO.")  # Indicamos que el número es menor
+        else:
+            # Asignamos puntos según el número de intentos
+            if intentos == 1:
+                puntos = 50
+            elif intentos <= 10:
+                puntos = 50 - (intentos - 1) * 5  # Se reducen 5 puntos por intento extra
+            else:
+                puntos = 1  # Si tarda más de 10 intentos, solo obtiene 1 punto
+            
+            print(f"¡BIEN HECHO {nombre}! Adivinaste el número en {intentos} intentos y obtuviste {puntos} puntos.")  # Mensaje de éxito
+
+adivina_el_numero()  # Llamamos a la función para iniciar el juego (prueba)     
