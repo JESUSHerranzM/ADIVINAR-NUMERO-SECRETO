@@ -46,4 +46,14 @@ def adivina_el_numero():
             
             print(f"¡BIEN HECHO {nombre}! Adivinaste el número en {intentos} intentos y obtuviste {puntos} puntos.")  # Mensaje de éxito
 
+ # Guardamos la puntuación en un archivo
+            guardar_puntuacion(nombre, puntos)
+            break  # Salimos del bucle cuando se adivina el número
+        
+# Si haces más de 3 o 6 intentos saldrá un mensaje        
+        if intentos > 3:
+            print(f"¡FOO! ya llevas {intentos} intentos matao.")
+        if intentos > 6:
+            print(f"¡ESPABILA! ya llevas {intentos} intentos tragaldabas.")
+
 adivina_el_numero()  # Llamamos a la función para iniciar el juego (prueba)     
